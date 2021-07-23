@@ -4,48 +4,42 @@ using System.Collections.Generic;
 
 namespace GameLogic.Architecture
 {
-    class Factory
+    public class Factory
     {
         // Enemies
-        private readonly Dictionary<EnemyType, EnemyConfig> enemies = new Dictionary<EnemyType, EnemyConfig>()
+        private readonly Dictionary<EnemyType, Enemy> enemies = new Dictionary<EnemyType, Enemy>()
         {
             // Asteroid
-            { EnemyType.Asteroid, new EnemyConfig()
-            {
-                Type = EnemyType.Asteroid,
-                MovementSpeed = GameConfigurations.Asteroid_MovementSpeed,
-                PointsForDestroy = GameConfigurations.Asteroid_PointsForDestroy
-            }
+            { EnemyType.Asteroid, new Enemy(
+                EnemyType.Asteroid,
+                GameConfigurations.Asteroid_MovementSpeed,
+                GameConfigurations.Asteroid_PointsForDestroy)
             },
 
             // Small asteroid
-            { EnemyType.SmallAsteroid, new EnemyConfig()
-            {
-                Type = EnemyType.SmallAsteroid,
-                MovementSpeed = GameConfigurations.SmallAsteroid_MovementSpeed,
-                PointsForDestroy = GameConfigurations.SmallAsteroid_PointsForDestroy
-            }
+            { EnemyType.SmallAsteroid, new Enemy(
+                EnemyType.SmallAsteroid,
+                GameConfigurations.SmallAsteroid_MovementSpeed,
+                GameConfigurations.SmallAsteroid_PointsForDestroy)
             },
 
             // FlyingSaucer
-            { EnemyType.FlyingSaucer, new EnemyConfig()
-            {
-                Type = EnemyType.FlyingSaucer,
-                MovementSpeed = GameConfigurations.FlyingSaucer_MovementSpeed,
-                PointsForDestroy = GameConfigurations.FlyingSaucer_PointsForDestroy
-            }
+            { EnemyType.FlyingSaucer, new Enemy(
+                EnemyType.FlyingSaucer,
+                GameConfigurations.FlyingSaucer_MovementSpeed,
+                GameConfigurations.FlyingSaucer_PointsForDestroy)
             }
         };
 
-        // Produce enemy
+        // Instantiate enemy
         public Enemy ProduceEnemy(EnemyType type)
         {
             if (!enemies.ContainsKey(type))
             {
-                throw new ArgumentException("Unknown module type: " + type);
+                throw new ArgumentException("Unknown enemy type: " + type);
             }
 
-            return new Enemy(enemies[type]);
+            return enemies[type];
         }
     }
 }

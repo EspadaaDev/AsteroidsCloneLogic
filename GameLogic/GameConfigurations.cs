@@ -15,17 +15,18 @@
         public static float SmallAsteroid_MovementSpeed = 15.0f;
         public static int   SmallAsteroid_PointsForDestroy = 50;
 
-        // FlyingSaucer,
+        // FlyingSaucer
         public static float FlyingSaucer_MovementSpeed = 12.0f;
         public static int   FlyingSaucer_PointsForDestroy = 200;
 
         /////////////////////////////////
-        /// Spacesheeps configurations ///
+        /// Spaceships configurations ///
         /////////////////////////////////
 
-        // Standart spacesheep
-        public static float Spacesheep_MaxSpeed = 10.0f;
-        public static float Spacesheep_Acceleration = 3.0f;
+        // Standart spaceship
+        public static float Spaceship_MaxSpeed = 10.0f;
+        public static float Spaceship_MaxForce = 100.0f;
+        public static float Spaceship_TurnSpeed = 30f;
 
         //////////////////////////////
         /// Weapons configurations ///

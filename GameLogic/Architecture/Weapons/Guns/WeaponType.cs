@@ -1,4 +1,4 @@
-﻿namespace GameLogic.Architecture.Weapons
+﻿namespace GameLogic.Architecture.Weapons.Guns
 {
     public enum WeaponType
     {

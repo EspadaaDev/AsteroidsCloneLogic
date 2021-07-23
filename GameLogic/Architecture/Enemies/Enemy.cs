@@ -3,15 +3,21 @@
     public class Enemy
     {
         // Fields
-        public readonly EnemyType Type;
-        public readonly float MovementSpeed;
-        public readonly float PointsForDestroy;
+        public EnemyType Type { get; }
+        public float MovementSpeed { get; }
+        public int PointsForDestroy { get; }
 
-        public Enemy(EnemyConfig config )
+        // Constructor
+        public Enemy(EnemyType type, float speed, int points)
         {
-            Type = config.Type;
-            MovementSpeed = config.MovementSpeed;
-            PointsForDestroy = config.PointsForDestroy;
+            Type = type;
+            MovementSpeed = speed;
+            PointsForDestroy = points;
+        }
+
+        public float Destroy()
+        {
+            return PointsForDestroy;
         }
     }
 }
