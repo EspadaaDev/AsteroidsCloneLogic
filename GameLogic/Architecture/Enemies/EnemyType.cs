@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.Architecture.Enemies
 {
-    public enum EnemyType
+    public enum EnemyType : byte
     {
         Asteroid,
         SmallAsteroid,

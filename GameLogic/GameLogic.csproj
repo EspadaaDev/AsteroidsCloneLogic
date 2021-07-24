@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Architecture\Enemies\Enemy.cs" />
+    <Compile Include="Architecture\Enemies\EnemyStats.cs" />
     <Compile Include="Architecture\Enemies\EnemyType.cs" />
-    <Compile Include="Architecture\Factory.cs" />
+    <Compile Include="Architecture\Enemies\EnemyStateProvider.cs" />
     <Compile Include="Architecture\Spaceships\StandartSpaceship.cs" />
     <Compile Include="Architecture\Weapons\Projectiles\Bullet.cs" />
     <Compile Include="Architecture\Weapons\Projectiles\LaserRay.cs" />

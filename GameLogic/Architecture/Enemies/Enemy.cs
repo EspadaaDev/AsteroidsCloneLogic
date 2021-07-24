@@ -1,23 +1,14 @@
 ﻿namespace GameLogic.Architecture.Enemies
 {
     public class Enemy
-    {
-        // Fields
-        public EnemyType Type { get; }
-        public float MovementSpeed { get; }
-        public int PointsForDestroy { get; }
+    {        
+        public EnemyStats Stats;
 
-        // Constructor
-        public Enemy(EnemyType type, float speed, int points)
-        {
-            Type = type;
-            MovementSpeed = speed;
-            PointsForDestroy = points;
-        }
+        private EnemyStateProvider stateProvider = new EnemyStateProvider();
 
-        public float Destroy()
+        public Enemy(EnemyType type)
         {
-            return PointsForDestroy;
+            Stats = stateProvider.GetStats(type);
         }
     }
 }
