@@ -46,22 +46,18 @@
     <Compile Include="Architecture\Enemies\EnemyType.cs" />
     <Compile Include="Architecture\Enemies\EnemyStateProvider.cs" />
     <Compile Include="Architecture\Spaceships\StandartSpaceship.cs" />
-    <Compile Include="Architecture\Weapons\Projectiles\Bullet.cs" />
-    <Compile Include="Architecture\Weapons\Projectiles\LaserRay.cs" />
     <Compile Include="Architecture\Weapons\Guns\MachineGun.cs" />
     <Compile Include="Architecture\Weapons\Guns\Laser.cs" />
     <Compile Include="Architecture\Weapons\Projectiles\Projectile.cs" />
+    <Compile Include="Architecture\Weapons\Projectiles\ProjectileStateProvider.cs" />
     <Compile Include="Architecture\Weapons\Projectiles\ProjectileType.cs" />
     <Compile Include="Architecture\Weapons\Guns\Weapon.cs" />
     <Compile Include="Architecture\Weapons\Guns\WeaponType.cs" />
-    <Compile Include="Core.cs" />
     <Compile Include="Architecture\Spaceships\Spaceship.cs" />
     <Compile Include="GameConfigurations.cs" />
-    <Compile Include="Player\Score.cs" />
+    <Compile Include="Architecture\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

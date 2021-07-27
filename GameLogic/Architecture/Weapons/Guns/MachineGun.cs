@@ -7,7 +7,7 @@ namespace GameLogic.Architecture.Weapons.Guns
         public MachineGun()
         {
             Type = WeaponType.MachineGun;
-            reloadTime = 0.3f;
+            reloadTime = 0.05f;
         }
         public override bool Shot()
         {

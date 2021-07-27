@@ -1,7 +1,10 @@
-﻿namespace GameLogic.Player
+﻿using System;
+
+namespace GameLogic.Architecture
 {
     public class Score
     {
+        public event Action<int> ScoreChangeNotify;
         // Score
         private int points;
 
@@ -18,6 +21,7 @@
         public void Add(int value)
         {
             points += value;
+            ScoreChangeNotify?.Invoke(points);
         }
 
         public Score()
