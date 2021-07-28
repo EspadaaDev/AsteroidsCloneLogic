@@ -40,6 +40,7 @@ namespace GameLogic.Architecture.Weapons.Guns
             }
             NumOfShotsHandler?.Invoke(NumOfShots);
         }
+
         // Reload between shots
         private void Reload(float value)
         {
@@ -49,9 +50,10 @@ namespace GameLogic.Architecture.Weapons.Guns
             }
         }
 
-        public void TimeFlow(float value)
+        public override void TimeFlow(float value)
         {
-
-        }
+            AddShot(value);
+            Reload(value);
+        }  
     }
 }

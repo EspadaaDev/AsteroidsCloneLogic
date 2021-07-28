@@ -4,6 +4,7 @@ namespace GameLogic.Architecture.Weapons.Guns
 {
     public class MachineGun : Weapon
     {
+        private float reloadTimer = 0;
         public MachineGun()
         {
             Type = WeaponType.MachineGun;
@@ -11,7 +12,21 @@ namespace GameLogic.Architecture.Weapons.Guns
         }
         public override bool Shot()
         {
-            return true;
+            if (reloadTimer <= 0) {
+                return true;
+            }
+            return false;
+        }
+        private void Reload(float value)
+        {
+            if (reloadTimer > 0)
+            {
+                reloadTimer -= value;
+            }
+        }
+        public override void TimeFlow(float value)
+        {
+            Reload(value);
         }
     }
 }

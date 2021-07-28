@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Architecture\Enemies\Enemy.cs" />
     <Compile Include="Architecture\Enemies\EnemyStats.cs" />
     <Compile Include="Architecture\Enemies\EnemyType.cs" />
-    <Compile Include="Architecture\Enemies\EnemyStateProvider.cs" />
-    <Compile Include="Architecture\Spaceships\StandartSpaceship.cs" />
     <Compile Include="Architecture\Weapons\Guns\MachineGun.cs" />
     <Compile Include="Architecture\Weapons\Guns\Laser.cs" />
     <Compile Include="Architecture\Weapons\Projectiles\Projectile.cs" />
