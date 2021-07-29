@@ -51,7 +51,6 @@
     <Compile Include="Architecture\Weapons\Guns\Weapon.cs" />
     <Compile Include="Architecture\Weapons\Guns\WeaponType.cs" />
     <Compile Include="Architecture\Spaceships\Spaceship.cs" />
-    <Compile Include="GameConfigurations.cs" />
     <Compile Include="Architecture\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
