@@ -5,27 +5,26 @@ namespace GameLogic.Architecture.Weapons.Guns
     public class Laser : Weapon
     {
         public readonly int MaximumShots;
-        public event Action<float> NumOfShotsHandler;
         public float NumOfShots { get; private set; }
-        private float reloadTimer = 0;
-        private float addShotTime = 0;
+        public float ReloadTimer { get; private set; } = 0;
+        public float AddShotTime { get; private set; } = 0;
 
         // Constructor
         public Laser(int maxShots, float timeToReload, float addShotTime)
         {
             Type = WeaponType.Laser;
             MaximumShots = maxShots;
-            reloadTimer = timeToReload;
-            this.addShotTime = addShotTime;
+            ReloadTimer = timeToReload;
+            this.AddShotTime = addShotTime;
         }
 
         // Shot
         public override bool Shot()
         {
-            if (NumOfShots > 0.99f && reloadTimer <= 0)
+            if (NumOfShots > 0.99f && ReloadTimer <= 0)
             {
                 NumOfShots -= 1;
-                reloadTimer = reloadTime;
+                ReloadTimer = reloadTime;
                 return true;
             }
             return false;
@@ -36,17 +35,16 @@ namespace GameLogic.Architecture.Weapons.Guns
         {
             if (NumOfShots < MaximumShots)
             {
-                NumOfShots += value/addShotTime;
+                NumOfShots += value/AddShotTime;
             }
-            NumOfShotsHandler?.Invoke(NumOfShots);
         }
 
         // Reload between shots
         private void Reload(float value)
         {
-            if (reloadTimer > 0)
+            if (ReloadTimer > 0)
             {
-                reloadTimer -= value;
+                ReloadTimer -= value;
             }
         }
 
